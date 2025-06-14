@@ -1,4 +1,4 @@
-import { getTempSymbol } from '../index.js';
+import { getTempSymbol, fahrenheitToCelsius } from '../index.js';
 
 export function handleSearch(city) {
   // const img = document.querySelector('img');
@@ -16,9 +16,23 @@ export function handleSearch(city) {
     .then((response) => response.json())
     .then((response) => {
       const tempSymbol = getTempSymbol();
-      tempDiv.innerHTML = `<span class="temp">${response.currentConditions.temp}</span> <span class="tempSym">${tempSymbol}</span>`;
+
+      let feelslike;
+      let temp;
+      if (tempSymbol === '°F') {
+        feelslike = response.currentConditions.feelslike;
+        temp = response.currentConditions.temp;
+      } else {
+        feelslike = fahrenheitToCelsius(response.currentConditions.feelslike);
+        temp = fahrenheitToCelsius(response.currentConditions.temp);
+      }
+      tempDiv.innerHTML = `<span class="temp">${temp}</span> <span class="tempSym">${tempSymbol}</span>`;
       cityDiv.innerText = response.resolvedAddress;
-      stateDiv.innerText = response.alerts[0].event;
+      if (response.alerts[0]) {
+        stateDiv.innerText = response.alerts[0].event;
+      } else {
+        stateDiv.innerText = response.currentConditions.conditions;
+      }
 
       // Extract the icon into a variable
       const weatherIcon = response.currentConditions.icon;
@@ -39,7 +53,7 @@ export function handleSearch(city) {
       additionalInfoDiv.innerHTML = `
     <div class="weather-info">
         <p><strong>Time:</strong> ${formattedTime}</p>
-        <p><strong>Feels Like:</strong> <span class="temp">${response.currentConditions.feelslike}</span> <span class="tempSym">${tempSymbol}</span></p>
+        <p><strong>Feels Like:</strong> <span class="temp">${feelslike}</span> <span class="tempSym">${tempSymbol}</span></p>
         <p><strong>Humidity:</strong> ${response.currentConditions.humidity}%</p>
         <p><strong>Sunrise:</strong> ${response.currentConditions.sunrise}</p>
         <p><strong>Sunset:</strong> ${response.currentConditions.sunset}</p>
