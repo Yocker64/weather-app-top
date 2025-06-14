@@ -1,4 +1,8 @@
 import { getTempSymbol, fahrenheitToCelsius } from '../index.js';
+import { changeWeatherBackground } from './ui.js';
+
+// eslint-disable-next-line import/no-mutable-exports
+let weatherIcon;
 
 export function handleSearch(city) {
   // const img = document.querySelector('img');
@@ -35,7 +39,7 @@ export function handleSearch(city) {
       }
 
       // Extract the icon into a variable
-      const weatherIcon = response.currentConditions.icon;
+      weatherIcon = response.currentConditions.icon;
 
       // Format the datetime for display (e.g., "03:27 AM")
       // Note: This assumes datetime is a string in "HH:MM:SS" format
@@ -59,7 +63,8 @@ export function handleSearch(city) {
         <p><strong>Sunset:</strong> ${response.currentConditions.sunset}</p>
     </div>
 `;
+
+      changeWeatherBackground(weatherIcon);
       console.log('Weather Icon:', weatherIcon);
-      console.log('InnerHTML for display:\n');
     });
 }
