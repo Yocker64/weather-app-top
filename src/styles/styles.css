@@ -37,7 +37,7 @@ body {
   font-size: 100px;
 }
 
-#additionalInfo {
+#additional-info {
   grid-column: 2/3;
 }
 
@@ -105,4 +105,49 @@ body {
   background-color: #525050; /* A light grey */
 
   overflow: hidden;
+}
+
+#changeUnit {
+  left: 10%;
+  top: 10%;
+  position: fixed;
+  background-color: transparent; /* Makes the button's background transparent */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* A subtle, slightly transparent white border */
+  color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* White text, almost solid but a touch transparent */
+  padding: 10px 15px; /* Comfortable padding for the button */
+  border-radius: 8px; /* Slightly more rounded corners */
+  cursor: pointer; /* Indicates it's clickable */
+  font-size: 1em; /* Standard font size */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease; /* Smooth transitions for hover/active states */
+}
+
+/*
+ * Hover state: Make it more visible when the user mouses over it
+ */
+#changeUnit:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slightly visible white background on hover */
+  color: white; /* Solid white text on hover */
+  border-color: white; /* Solid white border on hover */
+}
+
+/*
+ * Active state: When the button is being clicked
+ */
+#changeUnit:active {
+  background-color: rgba(255, 255, 255, 0.2); /* A bit more opaque on click */
+  color: white;
+  border-color: white;
 }
