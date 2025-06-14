@@ -1,5 +1,108 @@
-* {
-  font-size: 100px;
+body {
+  width: 100vw;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: ; */
+}
+
+#weather-info {
+  position: relative;
+  left: 10%;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+#weather-state {
   font-family: "Noto Sans";
-  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+#cityName {
+  font-family: "Noto Sans";
+  font-size: 3rem;
+}
+
+#body {
+  display: grid;
+  grid-template-rows: 1fr, 3fr;
+  max-width: 500px;
+}
+
+#temperature {
+  grid-column: 1 /2;
+  font-family: "Nunito";
+  font-size: 100px;
+}
+
+#additionalInfo {
+  grid-column: 2/3;
+}
+
+#searchField {
+  position: fixed;
+  right: 20%;
+  top: 10%;
+}
+
+/* Styling for transparent input fields that blend with the background */
+#search {
+  width: 15vw;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle border */
+  color: rgba(255, 255, 255, 0.8); /* Light, slightly transparent text color */
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  /* Optional: Smooth transition for when it becomes solid */
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Placeholder text color for the transparent state */
+#search::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Lighter, more transparent placeholder */
+}
+
+/* Styling when the input field is focused (clicked or tabbed into) */
+#search:focus {
+  background-color: #303330; /* Solid green background */
+  border-color: #090e09; /* Solid green border */
+  color: white; /* White text for input characters */
+  outline: none; /* Remove default focus outline for a cleaner look */
+}
+
+/* Placeholder text color when the input field is focused (optional, but good for consistency) */
+#search:focus::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Slightly less transparent white for better readability on green */
+}
+
+body {
+  /* Set the background image */
+
+  /* Prevent the image from repeating */
+  background-repeat: no-repeat;
+
+  /* Scale the image to cover the entire element.
+       This will crop parts of the image if its aspect ratio doesn't match the element's,
+       ensuring no overflowing and adapting to different sizes. */
+  background-size: cover;
+
+  /* Center the image within the element, so the most important parts are visible */
+  background-position: center center;
+
+  /* Optional: Set a fallback background color in case the image doesn't load */
+  background-color: #525050; /* A light grey */
+
+  overflow: hidden;
 }

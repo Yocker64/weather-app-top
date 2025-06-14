@@ -1,5 +1,8 @@
 import './styles/fontsAndReset.css';
 import './styles/styles.css';
+import cloubyDayImage from './images/cloudy-backgr.jpg';
+
+document.body.style.backgroundImage = `url('${cloubyDayImage}')`;
 
 // const img = document.querySelector('img');
 // fetch(
