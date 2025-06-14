@@ -30,7 +30,7 @@ export function handleSearch(city) {
         feelslike = fahrenheitToCelsius(response.currentConditions.feelslike);
         temp = fahrenheitToCelsius(response.currentConditions.temp);
       }
-      tempDiv.innerHTML = `<span class="temp">${temp}</span> <span class="tempSym">${tempSymbol}</span>`;
+      tempDiv.innerHTML = `<span class="temp">${Math.round(temp)}</span> <span class="tempSym">${tempSymbol}</span>`;
       cityDiv.innerText = response.resolvedAddress;
       if (response.alerts[0]) {
         stateDiv.innerText = response.alerts[0].event;
@@ -57,7 +57,7 @@ export function handleSearch(city) {
       additionalInfoDiv.innerHTML = `
     <div class="weather-info">
         <p><strong>Time:</strong> ${formattedTime}</p>
-        <p><strong>Feels Like:</strong> <span class="temp">${feelslike}</span> <span class="tempSym">${tempSymbol}</span></p>
+        <p><strong>Feels Like:</strong> <span class="temp">${Math.round(feelslike)}</span> <span class="tempSym">${tempSymbol}</span></p>
         <p><strong>Humidity:</strong> ${response.currentConditions.humidity}%</p>
         <p><strong>Sunrise:</strong> ${response.currentConditions.sunrise}</p>
         <p><strong>Sunset:</strong> ${response.currentConditions.sunset}</p>
