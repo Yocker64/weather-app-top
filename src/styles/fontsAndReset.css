@@ -34,3 +34,103 @@ img {
   display: block;
   max-inline-size: 100%;
 }
+
+/*
+ * Define custom font faces for the Nunito and Noto Sans font families.
+ * These rules link the font files from the '../fonts/' directory
+ * to their respective font-family names, specifying their font-weight and font-style.
+ * This allows these fonts to be used throughout the application's CSS.
+ */
+
+/* --- Nunito Font Faces --- */
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Black.ttf") format("truetype");
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/NunitoHeavy-Regular.ttf") format("truetype");
+  font-weight: 950; /* Assuming 'Heavy' is a heavier weight than Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+/* --- Noto Sans Font Faces --- */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Black.ttf") format("truetype");
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Condensed";
+  src: url("../fonts/NotoSans-CondensedBlack.ttf") format("truetype");
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Condensed";
+  src: url("../fonts/NotoSans-CondensedBold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Condensed";
+  src: url("../fonts/NotoSans-CondensedMedium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Condensed";
+  src: url("../fonts/NotoSans-Condensed.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
